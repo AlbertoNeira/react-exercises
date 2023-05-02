@@ -23,7 +23,7 @@ function App() {
       </header>
       <div>
       <h1>Welcome to my super app!</h1>
-      <Welcome name="Omer" />
+      <Welcome  />
     </div>
   
     </div>
