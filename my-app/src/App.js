@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hello from './components/Hello';
 import Message from './components/Message';
+import Welcome from './components/Welcome';
 
 function App() {
   return (
@@ -20,7 +21,10 @@ function App() {
           Learn React
         </a>
       </header>
-      <Message/>
+      <div>
+      <h1>Welcome to my super app!</h1>
+      <Welcome name="Omer" />
+    </div>
   
     </div>
   );
