@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import ClickTracker from './components/ClickTracker';
+import InteractiveWelcome from './components/InteractiveWelcome';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
     
       <div>
       <h1>Welcome to my super app!</h1>
-      <ClickTracker/>
+      <InteractiveWelcome/>
     </div>
   
     </div>
