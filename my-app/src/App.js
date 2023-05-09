@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import ClickCounter from './components/ClickCounter';
+import ClickTracker from './components/ClickTracker';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
     
       <div>
       <h1>Welcome to my super app!</h1>
-      <ClickCounter/>
+      <ClickTracker/>
     </div>
   
     </div>
