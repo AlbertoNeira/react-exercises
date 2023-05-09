@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 
+function CounterDisplay(props){
+    return  <h1>This is the count: {props.count}</h1>
+}
 class Counter extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +28,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <h1>This is the count: {this.state.count}</h1>
+         <CounterDisplay count={this.state.count} />
       </div>
     );
   }
