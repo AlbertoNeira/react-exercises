@@ -1,8 +1,5 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Hello from './components/Hello';
-import Message from './components/Message';
-import Welcome from './components/Welcome';
 import Counter from './components/Counter'
 
 function App() {
