@@ -13,7 +13,7 @@ class Age extends Component {
 
 Age.defaultProps = {
    
-    age: 15
+  
   };
   
 

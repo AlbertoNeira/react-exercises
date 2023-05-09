@@ -6,9 +6,9 @@ class Welcome extends Component {
     return (
       <div>
         <p>Welcome, {this.props.name}!</p>
-        {this.props.age>18
+        {this.props.age
           ?<Age age={this.props.age}/>
-          :<h1>U are under age</h1>}
+          :<h3>Your age is unkown</h3>}
       </div>
     );
   }
@@ -16,7 +16,7 @@ class Welcome extends Component {
 
 Welcome.defaultProps = {
     name: 'Stranger',
-    age: 24
+    
   };
   
 export default Welcome;

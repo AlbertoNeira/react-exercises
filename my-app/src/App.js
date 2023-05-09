@@ -10,7 +10,7 @@ function App() {
     
       <div>
       <h1>Welcome to my super app!</h1>
-      <Welcome name={<strong>Omer</strong>} age={19}/>
+      <Welcome name={<strong>Omer</strong>} age={24}/>
     </div>
   
     </div>
