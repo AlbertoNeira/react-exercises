@@ -5,13 +5,15 @@ class Welcome extends Component {
     return (
       <div>
         <p>Welcome, {this.props.name}!</p>
+        <p>Your age is {this.props.age}</p>
       </div>
     );
   }
 }
 
 Welcome.defaultProps = {
-    name: 'Stranger'
+    name: 'Stranger',
+    age: 24
   };
   
 export default Welcome;
