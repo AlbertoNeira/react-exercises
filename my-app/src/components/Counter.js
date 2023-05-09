@@ -5,16 +5,17 @@ class Counter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          count: 0
+          count:this.props.initialValue
         };
+        
       }
       
       componentDidMount() {
         this.interval = setInterval(() => {
           this.setState(prevState => ({
-            count: prevState.count + 1
+            count: prevState.count + this.props.incrementAmount
           }));
-        }, 1000);
+        }, this.props.incrementInterval);
       }
     
       componentWillUnmount() {

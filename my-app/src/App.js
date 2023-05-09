@@ -11,7 +11,7 @@ function App() {
     
       <div>
       <h1>Welcome to my super app!</h1>
-      <Counter/>
+      <Counter initialValue={5} incrementInterval={500} incrementAmount={10}/>
     </div>
   
     </div>
