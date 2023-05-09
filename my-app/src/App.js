@@ -1,6 +1,7 @@
 
 import './App.css';
-import Counter from './components/Counter'
+
+import ClickCounter from './components/ClickCounter';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
     
       <div>
       <h1>Welcome to my super app!</h1>
-      <Counter initialValue={5} incrementInterval={500} incrementAmount={10}/>
+      <ClickCounter/>
     </div>
   
     </div>
