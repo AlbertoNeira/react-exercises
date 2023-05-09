@@ -13,7 +13,9 @@ class Age extends Component {
 
 Age.defaultProps = {
    
-    age: 24
+    age: 15
   };
+  
+
   
 export default Age;

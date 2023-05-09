@@ -6,7 +6,9 @@ class Welcome extends Component {
     return (
       <div>
         <p>Welcome, {this.props.name}!</p>
-        <Age/>
+        {this.props.age>18
+          ?<Age age={this.props.age}/>
+          :<h1>U are under age</h1>}
       </div>
     );
   }
