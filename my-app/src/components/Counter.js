@@ -1,9 +1,6 @@
 import React from 'react';
+import CounterDisplay from './CounterDisplay';
 
-
-function CounterDisplay(props) {
-  return <h1>{props.count}</h1>;
-}
 
 class Counter extends React.Component {            //constructor no longer required
   state = {
