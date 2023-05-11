@@ -6,11 +6,11 @@ const TodoList = () => {
 
   const addItem = () => {
     if (newItem.trim() === '') {
-      return; // Do not add empty items
+      return;
     }
 
     setItems((prevItems) => [...prevItems, newItem]);
-    setNewItem('');
+    setNewItem(''); // this is exercise  Lists - Add Todo
   };
 
   return (
