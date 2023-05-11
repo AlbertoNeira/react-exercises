@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const UncontrolledLogin = ({ onLogin, onReset }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const usernameInputRef = useRef(null);
+
+  useEffect(() => {
+    usernameInputRef.current.focus();
+  }, []);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,6 +37,7 @@ const UncontrolledLogin = ({ onLogin, onReset }) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
+          ref={usernameInputRef}
         />
         <br />
         <input
