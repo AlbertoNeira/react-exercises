@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './Login';
+import UncontrolledLogin from './UncontrolledLogin';
 
 class InteractiveWelcome extends React.Component {
   constructor(props) {
@@ -8,6 +8,10 @@ class InteractiveWelcome extends React.Component {
       name: ''
     };
   }
+  handleLogin = (credentials) => {
+    // Perform login logic using the provided credentials
+    console.log('Login:', credentials);
+  };
 
   handleInputChange = (event) => {
     this.setState({
@@ -30,7 +34,7 @@ class InteractiveWelcome extends React.Component {
           onChange={this.handleInputChange}
         />
         <Welcome name={this.state.name} />
-        <Login onReset={this.handleReset} />
+        <UncontrolledLogin onLogin={this.handleLogin} onReset={this.handleReset} />
       </div>
     );
   }
