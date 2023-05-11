@@ -11,14 +11,17 @@ function App() {
     console.log('Logging in with:', credentials);
   }
   
-  
+  const handleReset = (name) => {
+    // Logic to clear the additional input in the parent component
+    console.log('Clearing additional input...');
+  };
   return (
     <div className="App">
     
       <div>
       <h1>Welcome to my super app!</h1>
-      <InteractiveWelcome/>
-      <Login onLogin={handleLogin}/>
+      <InteractiveWelcome onReset={handleReset}/>
+     
     </div>
   
     </div>

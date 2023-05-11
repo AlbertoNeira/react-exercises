@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './Login';
 
 class InteractiveWelcome extends React.Component {
   constructor(props) {
@@ -14,6 +15,12 @@ class InteractiveWelcome extends React.Component {
     });
   };
 
+  handleReset = () => {
+    this.setState({
+      name: ''
+    });
+  };
+
   render() {
     return (
       <div>
@@ -23,6 +30,7 @@ class InteractiveWelcome extends React.Component {
           onChange={this.handleInputChange}
         />
         <Welcome name={this.state.name} />
+        <Login onReset={this.handleReset} />
       </div>
     );
   }
