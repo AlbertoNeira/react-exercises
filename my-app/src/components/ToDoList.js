@@ -26,7 +26,7 @@ const TodoList = ({ render }) => {
   };
 
   return (
-    <div>
+    <div >
       <input
         type="text"
         value={newItem}

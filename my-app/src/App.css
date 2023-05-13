@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.App div form{
+  display: flex;
+  justify-content: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +16,20 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.todo{
+  
+  display: flex;
+  justify-content: center;
+ flex-direction: row;
+}
+
+.login{
+  
+  display: flex;
+  justify-content: center;
+  
+  margin-bottom: 5%;
 }
 
 .App-header {

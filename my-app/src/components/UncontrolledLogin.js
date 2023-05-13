@@ -30,7 +30,7 @@ const UncontrolledLogin = ({ onLogin, onReset }) => {
     
     
   return (
-    <div>
+    <div className='login'>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
