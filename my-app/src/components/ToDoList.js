@@ -12,6 +12,10 @@ const TodoList = () => {
     setItems((prevItems) => [...prevItems, newItem]);
     setNewItem(''); // this is exercise  Lists - Add Todo
   };
+  
+  const resetItems = () => {
+    setItems([]);
+  };
 
   return (
     <div>
@@ -27,6 +31,7 @@ const TodoList = () => {
           <li key={index}>{item}</li>
         ))}
       </ul>
+      <button onClick={resetItems}>Reset</button>
     </div>
   );
 };
