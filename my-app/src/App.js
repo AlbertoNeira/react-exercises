@@ -8,6 +8,8 @@ import DisplayLanguage from './components/DisplayLanguage';
 import LanguageProvider from './components/LanguageProvider';
 import ClickCounter from './components/ClickCounter';
 import Counter from './components/Counter';
+import GithubUserList from './components/GitHubUserList';
+import GithubUser from './components/GitHubUser';
 
 function App() {
   
@@ -56,8 +58,10 @@ function App() {
           </div>
         </LanguageProvider>
         
-        <Counter/>
-      </div>
+       
+        <GithubUser/>
+        <GithubUserList/>
+        </div>
     </div>
   );
 }
