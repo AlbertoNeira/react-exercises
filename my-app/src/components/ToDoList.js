@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TodoList = () => {
+const TodoList = ({ render }) => {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState('');
 
@@ -34,15 +34,7 @@ const TodoList = () => {
         placeholder="Add new item"
       />
       <button onClick={addItem}>Add</button>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>{item}
-            {item}
-            <button onClick={() => removeItem(index)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <button onClick={resetItems}>Reset</button>
+      {render(items, removeItem, resetItems)}
     </div>
   );
 };

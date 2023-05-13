@@ -22,7 +22,22 @@ function App() {
       <div>
       <h1>Welcome to my super app!</h1>
       <InteractiveWelcome onReset={handleReset}/>
-     <TodoList/>
+     <TodoList
+     
+        render={(items, removeItem, resetItems) => (
+          <div>
+            <ul>
+              {items.map((item, index) => (
+                <li key={index}>
+                  {item}
+                  <button onClick={() => removeItem(index)}>Remove</button>
+                </li>
+              ))}
+            </ul>
+            <button onClick={resetItems}>Reset</button>
+          </div>
+        )
+      }/>
     </div>
   
     </div>
