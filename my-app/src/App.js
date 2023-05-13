@@ -7,6 +7,7 @@ import TodoList from './components/ToDoList';
 import DisplayLanguage from './components/DisplayLanguage';
 import LanguageProvider from './components/LanguageProvider';
 import ClickCounter from './components/ClickCounter';
+import Counter from './components/Counter';
 
 function App() {
   
@@ -54,6 +55,8 @@ function App() {
             <DisplayLanguage />
           </div>
         </LanguageProvider>
+        
+        <Counter/>
       </div>
     </div>
   );
