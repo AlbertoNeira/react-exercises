@@ -17,6 +17,10 @@ function App() {
     console.log('Clearing additional input...');
   };
 
+  const handleCounterChange = (counterValue) => {
+    console.log('Counter changed:', counterValue);
+    // Perform any desired actions with the counter value
+  };
   
   return (
     <div className="App">
@@ -25,7 +29,7 @@ function App() {
 
         <InteractiveWelcome onReset={handleReset} />
         
-        <ClickCounter/>
+        <ClickCounter onCounterChange={handleCounterChange}/>
         <div className='todo'>
         <TodoList
           render={(items, removeItem, resetItems) => (
