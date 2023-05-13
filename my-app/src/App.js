@@ -6,6 +6,7 @@ import InteractiveWelcome from './components/InteractiveWelcome';
 import TodoList from './components/ToDoList';
 import DisplayLanguage from './components/DisplayLanguage';
 import LanguageProvider from './components/LanguageProvider';
+import ClickCounter from './components/ClickCounter';
 
 function App() {
   
@@ -23,6 +24,8 @@ function App() {
         <h1>Welcome to my super app!</h1>
 
         <InteractiveWelcome onReset={handleReset} />
+        
+        <ClickCounter/>
         <div className='todo'>
         <TodoList
           render={(items, removeItem, resetItems) => (
