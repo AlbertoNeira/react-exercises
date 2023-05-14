@@ -61,7 +61,7 @@ function App() {
         
        
         <GithubUser/>
-        <GithubUserList/>
+        
         </div>
     </div>
   );

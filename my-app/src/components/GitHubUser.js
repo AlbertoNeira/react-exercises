@@ -1,33 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import useGithubUser from '../Hooks/useGithubUser';
 
-const GithubUser = ({ username }) => {
-  const { userData, isLoading, error } = useGithubUser(username);
+const GithubUser = () => {
+  const [username, setUsername] = useState('');
+  const { userData, isLoading, error, fetchUserData } = useGithubUser(username);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const handleInputChange = (event) => {
+    setUsername(event.target.value);
+  };
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!userData) {
-    return null;
-  }
+  const handleFetchUser = () => {
+    fetchUserData(username);
+  };
 
   return (
     <div>
-      {userData ? (
-        <>
+      <input type="text" value={username} onChange={handleInputChange} />
+      <button onClick={handleFetchUser}>Fetch User</button>
+
+      {isLoading && <div>Loading...</div>}
+      {error && <div>Error: {error}</div>}
+      {userData && (
+        <div>
           <h2>{userData.name}</h2>
           <p>Username: {userData.login}</p>
           <p>Followers: {userData.followers}</p>
-          <p>Public Repositories: {userData.public_repos}</p>
-          <p>Location: {userData.location}</p>
-        </>
-      ) : (
-        <p>Loading user data...</p>
+          <p>Repositories: {userData.public_repos}</p>
+        </div>
       )}
     </div>
   );
