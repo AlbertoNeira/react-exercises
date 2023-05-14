@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import React, { useState } from 'react';
 import InteractiveWelcome from './components/InteractiveWelcome';
 
 import TodoList from './components/ToDoList';
@@ -11,14 +11,19 @@ import Counter from './components/Counter';
 import GithubUserList from './components/GitHubUserList';
 import GithubUser from './components/GitHubUser';
 import Login from './components/Login';
+import CarDetails from './components/CarDetails';
 
 function App() {
   
-  
-  
-  const handleReset = (name) => {
-    // Logic to clear the additional input in the parent component
-    console.log('Clearing additional input...');
+  const [carData, setCarData] = useState({
+    model: '',
+    year: '',
+    color: ''
+  });
+
+  const handleFormSubmit = (data) => {
+    // Update the carData state with the submitted form data
+    setCarData(data);
   };
 
   const handleCounterChange = (counterValue) => {
@@ -62,6 +67,12 @@ function App() {
        
         <GithubUser/>
         
+        <CarDetails initialData={carData} onFormSubmit={handleFormSubmit} />
+          <h2>Submitted Data:</h2>
+          <p>Model: {carData.model}</p>
+          <p>Year: {carData.year}</p>
+          <p>Color: {carData.color}</p>
+            
         </div>
     </div>
   );
