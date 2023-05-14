@@ -12,8 +12,17 @@ import GithubUserList from './components/GitHubUserList';
 import GithubUser from './components/GitHubUser';
 import Login from './components/Login';
 import CarDetails from './components/CarDetails';
+import FilteredList from './components/FilteredList';
 
 function App() {
+  
+  const list = [
+    { id: 1, name: 'John', age: 20 },
+    { id: 2, name: 'Jane', age: 25 },
+    { id: 3, name: 'Bob', age: 18.5 },
+    { id: 4, name: 'Alice', age: 30 },
+    { id: 5, name: 'Carlo', age: 17 },
+  ];
   
   const [carData, setCarData] = useState({
     model: '',
@@ -73,6 +82,7 @@ function App() {
           <p>Year: {carData.year}</p>
           <p>Color: {carData.color}</p>
             
+            <FilteredList list={list}/>
         </div>
     </div>
   );
