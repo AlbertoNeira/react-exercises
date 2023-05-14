@@ -31,7 +31,7 @@ function App() {
         <h1>Welcome to my super app!</h1>
 
         <InteractiveWelcome onReset={handleReset} />
-        
+        <Counter/>
         <ClickCounter onCounterChange={handleCounterChange}/>
         <div className='todo'>
         <TodoList
