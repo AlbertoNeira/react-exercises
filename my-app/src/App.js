@@ -10,6 +10,7 @@ import ClickCounter from './components/ClickCounter';
 import Counter from './components/Counter';
 import GithubUserList from './components/GitHubUserList';
 import GithubUser from './components/GitHubUser';
+import Login from './components/Login';
 
 function App() {
   
@@ -30,7 +31,7 @@ function App() {
       <div>
         <h1>Welcome to my super app!</h1>
 
-        <InteractiveWelcome onReset={handleReset} />
+        <Login/>
         <Counter/>
         <ClickCounter onCounterChange={handleCounterChange}/>
         <div className='todo'>

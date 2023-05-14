@@ -1,46 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useLogin from '../Hooks/useLogin';
 
+const Login = () => {
+  const { username, password, handleUsernameChange, handlePasswordChange, reset } = useLogin();
 
-
-const Login = ({ onLogin, onReset }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  
-  const isButtonDisabled = username === '' || password === '';
-
-  const handleLogin = () => {
-    // Call the onLogin function with the current state
-    onLogin({ username, password });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Perform form submission logic with username and password values
+    console.log('Username:', username);
+    console.log('Password:', password);
   };
   
   const handleReset = () => {
-    setUsername('');
-    setPassword('');
-    onReset()
+    reset(); // Call the reset function to clear the username and password
   };
-
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button disabled={isButtonDisabled} onClick={handleLogin}>
-        Login
-      </button>
-      <button onClick={handleReset}>
-        Reset
-      </button>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Username:
+        <input type="text" value={username} onChange={handleUsernameChange} />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input type="password" value={password} onChange={handlePasswordChange} />
+      </label>
+      <br />
+      <button type="submit">Submit</button>
+      <button onClick={handleReset}>Reset</button>
+    </form>
   );
 };
 
