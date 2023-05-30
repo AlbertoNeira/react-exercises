@@ -12,8 +12,11 @@ const GithubUserList = () => {
 
   const handleAddUser = () => {
     if (newUsername.trim() !== '') {
+      console.log('Adding user:', newUsername);
       setUsernames((prevUsernames) => [...prevUsernames, newUsername]);
       setNewUsername('');
+    } else {
+      console.log('Username is null');
     }
   };
 
