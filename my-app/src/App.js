@@ -13,6 +13,7 @@ import GithubUser from './components/GitHubUser';
 import Login from './components/Login';
 import CarDetails from './components/CarDetails';
 import FilteredList from './components/FilteredList';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
   
@@ -46,7 +47,8 @@ function App() {
         <h1>Welcome to my super app!</h1>
 
         <Login/>
-        <Counter/>
+      
+        <Route path="/counter" component={Counter} />
         <ClickCounter onCounterChange={handleCounterChange}/>
         <div className='todo'>
         <TodoList
