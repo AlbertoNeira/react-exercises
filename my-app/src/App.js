@@ -6,6 +6,14 @@ import Counter from './components/Counter';
 import Login from './components/Login';
 import ShowGithubUser from './components/ShowGithubUser';
 
+
+
+
+function NotFound() {
+  return <h1>404 - Not Found</h1>;
+}
+
+
 function App() {
   return (
     <Router>
@@ -31,6 +39,7 @@ function App() {
             <Route path="/login" element={<Login />} /> 
           <Route path="/users/:username" element={<ShowGithubUser />} />
           <Route path="/counter" element={<Counter />} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </div>
   </div>
