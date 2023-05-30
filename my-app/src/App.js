@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Counter from './components/Counter';
 import Login from './components/Login';
 import ShowGithubUser from './components/ShowGithubUser';
+import GithubUserList from './components/GitHubUserList';
 
 
 
@@ -28,16 +29,20 @@ function App() {
               <Link to="/login">Login</Link>
             </li>
             <li>
+              <Link to="/users">Github Users</Link>
+            </li>
+            <li>
               <Link to="/counter">Counter</Link>
             </li>
             <li>
-              <Link to="/users/AlbertoNeira">Show Alberto Neira</Link>
+              <Link to="/users/:username">Show Alberto Neira</Link>
             </li>
           </ul>
         </nav>
         <Routes>
             <Route path="/login" element={<Login />} /> 
           <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route path="/users" element={<GithubUserList />} />
           <Route path="/counter" element={<Counter />} />
           <Route path="*" element={<NotFound/>} />
         </Routes>

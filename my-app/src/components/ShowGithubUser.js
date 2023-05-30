@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import useGithubUser from '../Hooks/useGithubUser';
 import { useParams } from 'react-router-dom';
+import useGithubUser from '../Hooks/useGithubUser';
 
-const ShowGithubUser = () => {
-  const { userData, isLoading, error, fetchUserData } = useGithubUser();
+function ShowGithubUser() {
   const { username } = useParams();
+  const { userData, isLoading, error, fetchUserData } = useGithubUser();
 
   useEffect(() => {
     fetchUserData(username);
@@ -26,6 +26,6 @@ const ShowGithubUser = () => {
       )}
     </div>
   );
-};
+}
 
 export default ShowGithubUser;
