@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import useGithubUser from '../Hooks/useGithubUser';
 
-function ShowGithubUser() {
-  const { username } = useParams();
-  const { userData, isLoading, error, fetchUserData } = useGithubUser();
+const ShowGithubUser = ({ username }) => {
+  const { userData, isLoading, error, fetchUserData } = useGithubUser(username);
 
   useEffect(() => {
-    fetchUserData(username);
-  }, [fetchUserData, username]);
+    fetchUserData();
+  }, [fetchUserData]);
+
+  const handleFetchUser = () => {
+    fetchUserData();
+  };
 
   return (
     <div>
@@ -24,8 +26,10 @@ function ShowGithubUser() {
           <p>Repositories: {userData.public_repos}</p>
         </div>
       )}
+
+      <button onClick={handleFetchUser}>Fetch User Data</button>
     </div>
   );
-}
+};
 
 export default ShowGithubUser;

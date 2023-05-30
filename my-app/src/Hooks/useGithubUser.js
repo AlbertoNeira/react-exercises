@@ -2,7 +2,7 @@ import useSWR from 'swr';
 
 const fetchUserData = async (username) => {
   if (!username) {
-    console.log("username is null")
+    console.log('Username is null');
     return null;
   }
 
@@ -14,14 +14,17 @@ const fetchUserData = async (username) => {
 };
 
 const useGithubUser = (username) => {
-  const { data: userData, error } = useSWR(username, fetchUserData);
+  const { data: userData, error, revalidate } = useSWR(username, fetchUserData);
 
+  const handleFetchUserData = async () => {
+    revalidate(); // Trigger a re-fetch of the data
+  };
 
   return {
     userData,
     isLoading: !userData && !error,
     error,
-    fetchUserData,
+    fetchUserData: handleFetchUserData,
   };
 };
 
