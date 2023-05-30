@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, Outlet } from 'react-router-dom';
 import ShowGithubUser from './ShowGithubUser';
 
 const GithubUserList = () => {
@@ -35,6 +35,15 @@ const GithubUserList = () => {
       </ul>
 
       <Routes>
+        <Route path="/" element={<Message />} />
+        <Route
+          path="/users"
+          element={
+            <div>
+              <Outlet />
+            </div>
+          }
+        />
         <Route
           path="/users/:username"
           element={<ShowGithubUser usernames={usernames} />}
@@ -42,6 +51,10 @@ const GithubUserList = () => {
       </Routes>
     </div>
   );
+};
+
+const Message = () => {
+  return <p>Add a user and select it</p>;
 };
 
 export default GithubUserList;
